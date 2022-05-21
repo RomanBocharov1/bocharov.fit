@@ -89,6 +89,7 @@ foreign key (teacher_id) reference teacher (id) <br>
 <br>
 выбрать таблица.поле, таблица.поле  из 1 таблицы джойн  2 таблица на основании таблица.ключ = таблица.ключ<br>
 условие ....<br>
+джойн работает на одних типах данных<br>
 если есть напротив ключа запись в выбранном поле (в начале скрипта), то оно выбирается и присоединяется<br>
 select teacher.surname, lesson.name from teacher inner join       <br>
 lesson on teacher.id = lesson_teacher.id; <br>
@@ -183,23 +184,18 @@ INSERT INTO Customers (CustomerName, Address, City, PostalCode,Country)   вст
 VALUES('Hekkan Burger','Gateveien 15','Sandnes','4306','Norway');<br>
 <br>
 SELECT * FROM Customers WHERE поле is not null;<br>
-
-Выведите нагруженность (число пассажиров) каждого рейса (trip). 
-Результат вывести в отсортированном виде по убыванию нагруженности. 
-select trip,count(passenger) as count from Pass_in_trip 
-group by Trip
-order by count DESC;
-если даем псевдоним , то в скрипте используем уже данное название
-
-
-Во сколько Стив Мартин (Steve Martin) прилетел в Лондон (London)
-select time_in from Trip where town_to = 'London' and id in
-(select trip from Pass_in_trip where passenger in
-(select id from Passenger where name = 'Steve Martin'));
-
-
-
-
+<br>
+Выведите нагруженность (число пассажиров) каждого рейса (trip). <br>
+Результат вывести в отсортированном виде по убыванию нагруженности. <br>
+select trip,count(passenger) as count from Pass_in_trip <br>
+group by Trip<br>
+order by count DESC;<br>
+если даем псевдоним , то в скрипте используем уже данное название<br>
+<br>
+Во сколько Стив Мартин (Steve Martin) прилетел в Лондон (London)<br>
+select time_in from Trip where town_to = 'London' and id in<br>
+(select trip from Pass_in_trip where passenger in<br>
+(select id from Passenger where name = 'Steve Martin'));<br>
 <br>
 <br>
 <br>
@@ -218,6 +214,7 @@ select time_in from Trip where town_to = 'London' and id in
 <br>
 <br>
 <br>
+----------------<br>
 СКРИПТЫ:  (после каждого скрипта ставиться ; )<br>
 Оригинал                                         Перевод <br>
 show databases;                                показать все БД<br>
